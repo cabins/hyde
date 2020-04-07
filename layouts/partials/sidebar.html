@@ -1,11 +1,13 @@
 <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
-      <p class="lead">
-      {{ with .Site.Params.description }} {{.}} {{ else }}An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.{{end}}
+      <a href="{{ .Site.BaseURL }}"><p class="lead">@{{ .Site.Title }}</p></a>
+      <p>
+      {{ with .Site.Params.description }} {{.}} {{ else }}{{end}}
       </p>
     </div>
+
+    <hr>
 
     <nav>
       <ul class="sidebar-nav">
@@ -16,6 +18,7 @@
       </ul>
     </nav>
 
+    <hr>
     <p>{{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{ now.Format "2006"}}，版权保留。 {{end}}</p>
   </div>
 </aside>
