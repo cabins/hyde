@@ -1,24 +1,29 @@
 <aside class="sidebar">
   <div class="container sidebar-sticky">
+    <div>
+      <img src="/avatar-circle.png" alt="Avatar" />
+    </div>
     <div class="sidebar-about">
       <a href="{{ .Site.BaseURL }}"><p class="lead">@{{ .Site.Title }}</p></a>
       <p>
-      {{ with .Site.Params.description }} {{.}} {{ else }}{{end}}
+        {{ with .Site.Params.description }} {{.}} {{ else }}{{end}}
       </p>
     </div>
 
-    <hr>
+    <hr />
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="{{ .Site.BaseURL }}">首页</a> </li>
+        <li><a href="{{ .Site.BaseURL }}">首页</a></li>
         {{ range .Site.Menus.main -}}
-          <li><a href="{{.URL}}"> {{ .Name }} </a></li>
+        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
         {{- end }}
       </ul>
     </nav>
 
-    <hr>
-    <p>{{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{ now.Format "2006"}}，版权保留。 {{end}}</p>
+    <hr />
+    <p>
+      {{ with .Site.Params.copyright }}{{.}} {{ else }}&copy; {{ now.Format "2006"}}，版权保留。 {{end}}
+    </p>
   </div>
 </aside>
